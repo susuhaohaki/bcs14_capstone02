@@ -158,21 +158,17 @@ const Collection = () => {
       </div>
       {/* RIGHT SIDE */}
       <div className="flex-1">
-        <div className="flex-col lg:flex-row flex justify-between text-base sm:text-2xl mb-4">
+        <div className="flex-col lg:flex-row flex justify-between text-base sm:text-2xl mb-4 lg:items-center lg:gap-4">
           <Title text1={"ALL"} text2={"COLLECTION"} />
           {/* PRODUCT SORT */}
-          <div className="flex items-center border border-gray-300 p-2 dark:border-gray-600">
+          <div className="flex items-center border border-gray-300 p-2 dark:border-gray-600 max-h-[50px]">
             <input
               onChange={(e) => setSearch(e.target.value)}
               type="text"
               className="border-none focus:outline-none bg-transparent dark:text-gray-200 w-full"
               placeholder="Tìm kiếm..." // Thêm placeholder nếu cần
             />
-            <img
-              src="./src/assets/search_icon.png"
-              alt="Search"
-              className="w-5"
-            />
+            <i className="fa-solid fa-magnifying-glass dark:text-gray-200 text-gray-500" />
           </div>
         </div>
         {/* Map Product */}
