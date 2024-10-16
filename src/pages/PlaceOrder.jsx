@@ -19,7 +19,7 @@ const PlaceOrder = () => {
   return (
     <form
       onSubmit={onSubmitHandler}
-      className="flex flex-col sm:flex-row justify-between gap-4 pt-5 sm:pt-14 min-h-[80vh] border-t dark:bg-dark dark:text-white"
+      className="flex flex-col sm:flex-row justify-between gap-4 pt-5 sm:pt-14 min-h-[80vh] border-t dark:bg-dark dark:border-gray-600 dark:text-white"
     >
       {/* ---------- left side ---------- */}
       <div className="flex flex-col gap-4 w-full sm:max-w-[480px]">
@@ -30,14 +30,14 @@ const PlaceOrder = () => {
           <input
             required
             name="firstName"
-            className="border border-gray-300 rounded py-1.5 px-3.5 w-full dark:border-gray-600"
+            className="border border-gray-300 rounded py-1.5 px-3.5 w-full dark:border-gray-600 bg-transparent dark:text-white"
             type="text"
             placeholder="First name"
           />
           <input
             required
             name="lastName"
-            className="border border-gray-300 rounded py-1.5 px-3.5 w-full dark:border-gray-600"
+            className="border border-gray-300 rounded py-1.5 px-3.5 w-full dark:border-gray-600 bg-transparent dark:text-white"
             type="text"
             placeholder="Last name"
           />
@@ -45,14 +45,14 @@ const PlaceOrder = () => {
         <input
           required
           name="email"
-          className="border border-gray-300 rounded py-1.5 px-3.5 w-full dark:border-gray-600"
+          className="border border-gray-300 rounded py-1.5 px-3.5 w-full dark:border-gray-600 bg-transparent dark:text-white"
           type="email"
           placeholder="Email address"
         />
         <input
           required
           name="street"
-          className="border border-gray-300 rounded py-1.5 px-3.5 w-full dark:border-gray-600"
+          className="border border-gray-300 rounded py-1.5 px-3.5 w-full dark:border-gray-600 bg-transparent dark:text-white"
           type="text"
           placeholder="Street"
         />
@@ -60,14 +60,14 @@ const PlaceOrder = () => {
           <input
             required
             name="city"
-            className="border border-gray-300 rounded py-1.5 px-3.5 w-full dark:border-gray-600"
+            className="border border-gray-300 rounded py-1.5 px-3.5 w-full dark:border-gray-600 bg-transparent dark:text-white"
             type="text"
             placeholder="City"
           />
           <input
             required
             name="state"
-            className="border border-gray-300 rounded py-1.5 px-3.5 w-full dark:border-gray-600"
+            className="border border-gray-300 rounded py-1.5 px-3.5 w-full dark:border-gray-600 bg-transparent dark:text-white"
             type="text"
             placeholder="State"
           />
@@ -76,14 +76,14 @@ const PlaceOrder = () => {
           <input
             required
             name="zipcode"
-            className="border border-gray-300 rounded py-1.5 px-3.5 w-full dark:border-gray-600"
+            className="border border-gray-300 rounded py-1.5 px-3.5 w-full dark:border-gray-600 bg-transparent dark:text-white"
             type="number"
             placeholder="Zip code"
           />
           <input
             required
             name="country"
-            className="border border-gray-300 rounded py-1.5 px-3.5 w-full dark:border-gray-600"
+            className="border border-gray-300 rounded py-1.5 px-3.5 w-full dark:border-gray-600 bg-transparent dark:text-white"
             type="text"
             placeholder="Country"
           />
@@ -91,7 +91,7 @@ const PlaceOrder = () => {
         <input
           required
           name="phone"
-          className="border border-gray-300 rounded py-1.5 px-3.5 w-full dark:border-gray-600"
+          className="border border-gray-300 rounded py-1.5 px-3.5 w-full dark:border-gray-600 bg-transparent dark:text-white"
           type="number"
           placeholder="Phone"
         />
@@ -109,41 +109,26 @@ const PlaceOrder = () => {
               onClick={() => setMethod("stripe")}
               className="flex items-center gap-3 border p-2 px-3 cursor-pointer dark:border-gray-600"
             >
-              <p
-                className={`min-w-3.5 h-3.5 border rounded-full ${
-                  method === "stripe" ? "bg-green-400" : ""
-                }`}
-              ></p>
+              <p className={`min-w-3.5 h-3.5 border rounded-full ${method === "stripe" ? "bg-green-400" : ""}`}></p>
               <img src={assets.stripe_logo} className="h-5 mx-4" alt="" />
             </div>
             <div
               onClick={() => setMethod("razorpay")}
               className="flex items-center gap-3 border p-2 px-3 cursor-pointer dark:border-gray-600"
             >
-              <p
-                className={`min-w-3.5 h-3.5 border rounded-full ${
-                  method === "razorpay" ? "bg-green-400" : ""
-                }`}
-              ></p>
+              <p className={`min-w-3.5 h-3.5 border rounded-full ${method === "razorpay" ? "bg-green-400" : ""}`}></p>
               <img src={assets.razorpay_logo} className="h-5 mx-4" alt="" />
             </div>
             <div
               onClick={() => setMethod("cod")}
               className="flex items-center gap-3 border p-2 px-3 cursor-pointer dark:border-gray-600"
             >
-              <p
-                className={`min-w-3.5 h-3.5 border rounded-full ${
-                  method === "cod" ? "bg-green-400" : ""
-                }`}
-              ></p>
+              <p className={`min-w-3.5 h-3.5 border rounded-full ${method === "cod" ? "bg-green-400" : ""}`}></p>
               <p>Cash on delivery</p>
             </div>
           </div>
         </div>
-        <button
-          type="submit"
-          className="bg-black text-white mt-8 px-8 py-3 dark:bg-gray-600"
-        >
+        <button type="submit" className="bg-black text-white mt-8 px-8 py-3 dark:bg-gray-600">
           PLACE ORDER
         </button>
       </div>

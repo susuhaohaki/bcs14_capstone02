@@ -4,8 +4,7 @@ import { assets } from "../assets/assets";
 import { ShopContext } from "../context/ShopContext";
 
 const Navbar = () => {
-  const { token, navigate, setToken, getCartCount, setCartItems } =
-    useContext(ShopContext);
+  const { token, navigate, setToken, getCartCount, setCartItems } = useContext(ShopContext);
   const [visible, setVisible] = useState(false);
   // ---------- Logout user ---------
   const logoutUser = () => {
@@ -87,19 +86,14 @@ const Navbar = () => {
           {token && (
             <div className="group-hover:block hidden absolute dropdown-menu right-0 pt-4">
               <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-500 dark:bg-gray-800 dark:text-gray-200 rounded">
-                <p className="cursor-pointer hover:text-black dark:hover:text-white">
-                  My Profile
-                </p>
+                <p className="cursor-pointer hover:text-black dark:hover:text-white">My Profile</p>
                 <p
                   onClick={() => navigate("/orders")}
                   className="cursor-pointer hover:text-black dark:hover:text-white"
                 >
                   Orders
                 </p>
-                <p
-                  onClick={logoutUser}
-                  className="cursor-pointer hover:text-black dark:hover:text-white"
-                >
+                <p onClick={logoutUser} className="cursor-pointer hover:text-black dark:hover:text-white">
                   Logout
                 </p>
               </div>
@@ -114,12 +108,9 @@ const Navbar = () => {
             {getCartCount()}
           </p>
         </Link>
-        <img
-          onClick={() => setVisible(true)}
-          src={assets.menu_icon}
-          className="w-5 cursor-pointer sm:hidden"
-          alt="Menu"
-        />
+        <div onClick={() => setVisible(true)} className="w-5 cursor-pointer sm:hidden  dark:text-gray-500">
+          <i className="fa-solid fa-bars" />
+        </div>
       </div>
       {/* sidebar menu for small screen */}
       <div
@@ -128,43 +119,20 @@ const Navbar = () => {
         }`}
       >
         <div className="flex flex-col text-gray-600 dark:text-gray-300">
-          <div
-            onClick={() => setVisible(false)}
-            className="flex items-center gap-4 p-3 cursor-pointer "
-          >
-            <img
-              src={assets.dropdown_icon}
-              className="h-4 rotate-180"
-              alt="Back"
-            />
+          <div onClick={() => setVisible(false)} className="flex items-center gap-4 p-3 cursor-pointer ">
+            <img src={assets.dropdown_icon} className="h-4 rotate-180" alt="Back" />
             <p>back</p>
           </div>
-          <NavLink
-            onClick={() => setVisible(false)}
-            className="py-2 pl-6 border dark:border-gray-700"
-            to="/"
-          >
+          <NavLink onClick={() => setVisible(false)} className="py-2 pl-6 border dark:border-gray-700" to="/">
             HOME
           </NavLink>
-          <NavLink
-            onClick={() => setVisible(false)}
-            className="py-2 pl-6 border dark:border-gray-700"
-            to="/collection"
-          >
+          <NavLink onClick={() => setVisible(false)} className="py-2 pl-6 border dark:border-gray-700" to="/collection">
             COLLECTION
           </NavLink>
-          <NavLink
-            onClick={() => setVisible(false)}
-            className="py-2 pl-6 border dark:border-gray-700"
-            to="/about"
-          >
+          <NavLink onClick={() => setVisible(false)} className="py-2 pl-6 border dark:border-gray-700" to="/about">
             ABOUT
           </NavLink>
-          <NavLink
-            onClick={() => setVisible(false)}
-            className="py-2 pl-6 border dark:border-gray-700"
-            to="/contact"
-          >
+          <NavLink onClick={() => setVisible(false)} className="py-2 pl-6 border dark:border-gray-700" to="/contact">
             CONTACT
           </NavLink>
         </div>

@@ -5,8 +5,7 @@ import { assets } from "../assets/assets";
 import CartTotal from "../components/CartTotal.jsx";
 
 const Cart = () => {
-  const { products, currency, cartItems, updateQuantity, navigate } =
-    useContext(ShopContext);
+  const { products, currency, cartItems, updateQuantity, navigate } = useContext(ShopContext);
   const [cartData, setCartData] = useState([]);
   useEffect(() => {
     console.log("🚀 ~ Cart ~ products:", products);
@@ -29,27 +28,23 @@ const Cart = () => {
   }, [cartItems, products]);
 
   return (
-    <div className="border-t pt-14 bg-white dark:bg-dark text-gray-900 dark:text-gray-300">
+    <div className="border-t pt-14 bg-white dark:bg-dark text-gray-900 dark:text-gray-300 dark:dark:border-gray-600">
       <div className="text-2xl mb-3">
         <Title text1={"YOUR"} text2={"CART"} />
       </div>
       <div>
         {cartData.map((item, index) => {
           console.log(products);
-          const productData = products.find(
-            (product) => Number(product.id) === Number(item.id)
-          );
+          const productData = products.find((product) => Number(product.id) === Number(item.id));
           return (
             <div
               key={index}
-              className="py-4 border-t border-b text-gray-700 dark:text-gray-300 grid grid-cols-[4fr_0.5fr_0.5fr] sm:grid-cols-[4fr_2fr_0.5fr] items-center gap-4"
+              className="py-4 border-t border-b text-gray-700 dark:text-gray-300 dark:dark:border-gray-600 grid grid-cols-[4fr_0.5fr_0.5fr] sm:grid-cols-[4fr_2fr_0.5fr] items-center gap-4"
             >
               <div className="flex items-start gap-6">
                 <img src={productData.image} className="w-16 sm:w-20" alt="" />
                 <div>
-                  <p className="text-xs sm:text-lg font-medium">
-                    {productData.name}
-                  </p>
+                  <p className="text-xs sm:text-lg font-medium">{productData.name}</p>
                   <div className="flex items-center gap-5 m-2">
                     <p>
                       {currency}
